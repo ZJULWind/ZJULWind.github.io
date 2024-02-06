@@ -4,7 +4,7 @@ site_url: https://localhost:8000/
 site_author: ZJULWind         # 作者
 # 代码仓库信息
 repo_name: ZJULWindCode # 仓库名称
-repo_url: https://github.com/ZJUCCnocc/BlogCode.git/ # 仓库地址
+repo_url: https://github.com/ZJULWind/ZJULWind.git/ # 仓库地址
 
 
 nav: 
