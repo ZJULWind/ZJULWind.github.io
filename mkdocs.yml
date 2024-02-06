@@ -1,0 +1,16 @@
+# 项目信息
+site_name: ZJULWind's Blog    # 项目名称
+site_url: https://localhost:8000/ 
+site_author: ZJULWind         # 作者
+# 代码仓库信息
+repo_name: ZJULWindCode # 仓库名称
+repo_url: https://github.com/ZJUCCnocc/BlogCode.git/ # 仓库地址
+
+
+nav: 
+  - 主页: index.md
+  - 关于我: about.md
+
+theme:
+  name: material # 主题名称，Material已经是最优秀的选择了，相信我。
+  
