@@ -1,17 +1,19 @@
 ## 一、表(Lists)
 几种链表
+
 1. 单向表
 2. 单向循环链表
 3. 双向链表
 4. 带有头节点的双向链表
 5. 顺序表
 
-题目
+题目  
 1. For a sequentially stored linear list of length N, the time complexities for deleting the first element and inserting the last element are O(1) and O(N), respectively.错误
 ## 二、栈(Stack)
 ### (1)定义
-top：栈顶元素
+top：栈顶元素  
 操作表
+
 1. int Isempty(Stack S);
 2. Stack CreateStack(void);
 3. void Push(Stack S);
@@ -70,15 +72,16 @@ void Push(SqStack *S, ElemType e){
 ## 三、队列(Queus)
 
 ### (1)定义
-定义了队头front，队尾rear，队头出，队尾进
-操作表
+定义了队头front，队尾rear，队头出，队尾进  
+操作表  
+
 1. InitQueue(&Q)
 2. QueueEmpty(Q)
 3. **EnQueue(&Q, x)**
 4. **DeQueue(&Q, &x)**
 5. GetHead(Q, &x)
 ### (2)实现
-代码实现中，一般用front=rear来判断队列是否为空，用$(rear+1)\% MAX\_SIZE==front$来判断是否为满。
+代码实现中，一般用front=rear来判断队列是否为空，用$(rear+1)\% MAX\_SIZE==front$来判断是否为满。  
 ```c
 #define MAXSIZE 50  //定义队列中元素的最大个数
 
@@ -97,7 +100,7 @@ typedef struct{
 // 队尾指针进1：Q->rear = (Q->rear + 1) % MAXSIZE。
 // 队列长度：(Q->rear - Q->front + MAXSIZE) % MAXSIZE。
 ```
-### (3)应用
+### (3)应用  
 1. 顺序队列
 2. 循环队列：rear要超过数组大小的时候，把他转到0
 3. 双端队列：可以在rear出列

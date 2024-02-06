@@ -51,7 +51,24 @@ typedef struct BiTNode{
 ![Alt text](Attachments/Lec04%20Tree_image_5.png)
 
 ###  (4)非递归算法
-略一下  
+```c
+void iter_inorder(Tree T)
+{
+	stack s;
+	while(1)
+	{
+		for(;T;T=T.left){
+			push(T,s);
+		}
+		T=top(s);
+		pop(s);;
+		
+		if(T=NULL) break;
+		print(T.data);
+		T=T.right;
+	}	
+}
+```
 ### (5)层次遍历：运用队列
 ```
 1）根结点入队

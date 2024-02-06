@@ -8,7 +8,11 @@ site_author: ZJULWind         # 作者
 
 
 nav: 
-  - 首页: home.md
+  - 首页: 
+    - 首页 : home/index.md
+    - 朋友们 : home/friend.md
+    - 其他朋友们: home/friendsplus.md
+
   - 基础课程: 
     - ./fundamental/index.md
     - 概率论与数理统计 :
@@ -29,8 +33,13 @@ nav:
       - Lec08 Sorting             : fundamental/FDS/Lec08 Sorting.md
       - Lec09 Hashing             : fundamental/FDS/Lec09 Hashing.md
       - FDS复习向                  : fundamental/FDS/FDS复习.md
-  - 专业课程: special.md
-  - ACEE&Shannon: extra.md
+  - 专业课程: special/index.md
+  - ACEE&Shannon: 
+    - ./extra/index.md
+    - Stanford CS229  MachineLearning :
+      - ./extra/Stanford CS229  MachineLearning/index.md
+    - Stanford EE364A Convex Optimization :
+      - ./extra/Stanford EE364A Convex Optimization/index.md
 
 theme:
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
