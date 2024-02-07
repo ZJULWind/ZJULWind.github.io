@@ -1,5 +1,5 @@
 [fds复习](FDS-Review.pdf)
-# 一、记录一些性质
+## 一、记录一些性质
 ·对树来说，如果有N个结点，那么有N-1条边。
 
 ·对二叉树来说 n0=n2+1
@@ -10,8 +10,8 @@
 
 ·欧拉环--连通图且每个度为偶数；欧拉路-两个度为奇且从奇数开始
 
-# 二、猜测考的代码段
-## 1.树-遍历
+## 二、猜测考的代码段
+### 1.树-遍历
 递归
 ```c
 void preorder(Tree T)
@@ -76,7 +76,7 @@ void iter_inorder(Tree T)
 	}	
 }
 ```
-## 2.堆-上溯下溯
+### 2.堆-上溯下溯
 ```c
 void percolateup (int p,pq H)
 {
@@ -134,7 +134,7 @@ for(int i=n/2-1;i>=0;i--)
 }
 ```
 
-## 3.并查集
+### 3.并查集
 ```c
 int find(int x)                
 {
@@ -173,5 +173,5 @@ void union(int x,int y)
 ```
 
 
-# 三、时间复杂度汇总
+## 三、时间复杂度汇总
 [老师我学不会时间复杂度](https://blog.csdn.net/csyifanZhang/article/details/107009215)

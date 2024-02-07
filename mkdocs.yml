@@ -20,7 +20,7 @@ nav:
       - 常见随机变量的数字特征: fundamental/gaitong/sum.md
       - 5-大数定律和中心极限定理 : fundamental/gaitong/chap05.md
       - 6-数理统计的基本概念 : fundamental/gaitong/chap06.md
-      - 7-统计量与抽样分布 : fundamental/gaitong/chap07.md
+      - 7-参数估计 : fundamental/gaitong/chap07.md
       - 8-假设检验 : fundamental/gaitong/chap08.md
     - 数据结构基础 :
       - ./fundamental/FDS/index.md
@@ -157,9 +157,9 @@ markdown_extensions:
         - includes/abbreviations.md
 
 extra_css:
-  - assets/stylesheets/extra.css
-  - assets/stylesheets/glightbox.min.css
-  - assets/stylesheets/galaxy.css
+  # - assets/stylesheets/extra.css
+  # - assets/stylesheets/glightbox.min.css
+  # - assets/stylesheets/galaxy.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css
@@ -167,13 +167,13 @@ extra_css:
 # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 
 extra_javascript:
-  - assets/javascripts/katex.js 
-  - assets/javascripts/mathjax.js
+  # - assets/javascripts/katex.js 
+  # - assets/javascripts/mathjax.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - assets/javascripts/titlechange.js
-  - assets/javascripts/glightbox.min.js
-  - assets/javascripts/click.js
-  - assets/javascripts/galaxy.js
+  # - assets/javascripts/titlechange.js
+  # - assets/javascripts/glightbox.min.js
+  # - assets/javascripts/click.js
+  # - assets/javascripts/galaxy.js

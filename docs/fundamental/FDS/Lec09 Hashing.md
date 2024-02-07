@@ -1,3 +1,4 @@
+笔记很迷惑 不推荐看
 ## 一、General Idea
 哈希表（Hash Table）：也叫做散列表。是根据关键码值（Key Value）直接进行访问的数据结构。
 

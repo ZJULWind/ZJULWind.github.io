@@ -4,23 +4,23 @@
 ### 1.程序
 ![](Attachments/Lec08 Sorting_image_1.png)
 ### 2.A Lower Bound for Simple Sorting Algorithms
-一次交换相当于减去一对逆序对
-所以时间复杂度：
-T ( N, I ) = O(I+N ) where I is the number of inversions in the original array.‘
+一次交换相当于减去一对逆序对  
+所以时间复杂度：  
+T ( N, I ) = O(I+N ) where I is the number of inversions in the original array.
 
 ### 3.两个算法定理
-【Theorem】The average number of inversions in an array of N distinct numbers is  N ( N - 1 ) / 4.
+【Theorem】The average number of inversions in an array of N distinct numbers is  N ( N - 1 ) / 4.  
 【Theorem】Any algorithm that sorts by exchanging adjacent elements requires $\Omega( N^2 )$ time on average.
 
 ## 二、Shellsort
 规定一个序列{$h_k$},$分别进行h_i-sort$ ，最后到1-sort，进行插入排序
 ### 1.Shell's increment sequence
 ![](Attachments/Lec08 Sorting_image_2.png)
-#### Worst-Case Analysis
-当选取的序列有倍数关系，那部分sort会无效，是shell序列的一个漏洞
+!!! warning "Worst-Case Analysis"
+	- 当选取的序列有倍数关系，那部分sort会无效，是shell序列的一个漏洞
 
 ### 2.Hibbard’s Increment Sequence
-Sedgewick’s best sequence是当前最好的一个序列
+Sedgewick’s best sequence是当前最好的一个序列  
 ![](Attachments/Lec08 Sorting_image_3.png)
 ## 三、堆排序
 小顶堆
@@ -34,7 +34,9 @@ Algorithm 1:
 		  H[ i ] = TmpH[ i ];
 }
 ```
+
 $$T(N)=O(NlogN)$$
+
 大顶堆：
 ```c
 void Heapsort( ElementType A[ ], int N )
@@ -46,15 +48,17 @@ void Heapsort( ElementType A[ ], int N )
         PercDown( A, 0, i );
     }
 ```
-【Theorem】The average number of comparisons used to heapsort a random permutation of N distinct items is
-$$
-    2N log N - O( N log log N ) 
-$$
-Although Heapsort gives the **best average time**, in practice it is **slower than a version of Shellsort** that uses Sedgewick’s increment sequence.
+
+!!! quote "【Theorem】"
+	The average number of comparisons used to heapsort a random permutation of N distinct items is
+	$$
+	    2N log N - O( N log log N ) 
+	$$
+	Although Heapsort gives the **best average time**, in practice it is **slower than a version of Shellsort** that uses Sedgewick’s increment sequence.
 
 ## 四、Mergesort归并排序
 ### 1.思路
-使用三个指针，将两个已排序好的数组归并到一个数组里。时间复杂度为O（N）
+使用三个指针，将两个已排序好的数组归并到一个数组里。时间复杂度为O（N）  
 ![](Attachments/Lec08 Sorting_image_4.png)
 ### 2.实现
 ```c
@@ -108,7 +112,7 @@ void Merge( ElementType A[ ], ElementType TmpArray[ ],int Lpos, int Rpos, int Ri
         A[ RightEnd ] = TmpArray[ RightEnd ];
 }
 ```
-note:如果数组开在Merge内部，那么整个时间复杂度为O(NlogN)
+!!! note "如果数组开在Merge内部，那么整个时间复杂度为O(NlogN)"
 ### 3.分析
 #### 时间复杂度
 ![](Attachments/Lec08 Sorting_image_5.png)
@@ -142,11 +146,11 @@ $$
 对于选定的Pivot，如何让左边均为小，右边均为大？
 
 
-### 4.Small Arrays对于小数组来说
-Quicksort在数据较少的时候不一定快
+### 4.For Small Arrays
+Quicksort在数据较少的时候不一定快  
 Cutoff when N gets small ( e.g. N = 10 ) and use other efficient algorithms (such as insertion sort).
 ### 5.实现
-Median3函数的作用：将left，center，right的顺序按照从小到大的顺序排好，然后返回right-1的值
+Median3函数的作用：将left，center，right的顺序按照从小到大的顺序排好，然后返回right-1的值  
 Qsort主要函数思路：在左边搜索，如果碰到比pivot大的，停下来；后面再在右边搜索，如果碰到比pivot小的，停下来。交换i,j；
 
 ```c
@@ -198,6 +202,7 @@ void  Qsort( ElementType A[ ], int Left, int Right )
 ```
 ### 6.时间复杂度分析
 递推公式
+
 $$
 T( N ) = T( i ) + T( N – i – 1 ) + c N
 $$
@@ -206,8 +211,8 @@ $最坏情况O(N^2),最好情况O(NlogN),平均时间是O(NlogN)$
 ## 六、Sorting Large Structures
 Table Sort 讲的很迷惑
 ## 七、A General Lower Bound for Sorting
-`【Theorem】Any algorithm that sorts by comparisons only must have a worst case computing time of Ω(NlogN).`
-说的是任何通过交换进行的排序的时间复杂度至少也是NlogN
+!!! quote "【Theorem】"
+	Any algorithm that sorts by comparisons only must have a worst case computing time of Ω(NlogN).  说的是任何通过交换进行的排序的时间复杂度至少也是NlogN
 
 # 八、Bucket Sort and Radix Sort
 ### 1.Bukect Sort 桶排序

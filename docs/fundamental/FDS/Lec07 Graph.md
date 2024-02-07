@@ -96,11 +96,12 @@ $$
 #### 生成树
 【Definition】 A spanning tree of a graph G is a tree which consists of V( G ) and a subset of E( G ) 
 这说明顶点和边都为原图中存在的
-##### note一些性质
-1. 如果存在spanning tree 那原图一定是联通的
-2. spanning tree不唯一
-3. 仅有n-1条边，这是树的性质。
-4. 无环
+
+!!! note "一些性质"
+    - 如果存在spanning tree 那原图一定是联通的
+    - spanning tree不唯一
+    - 仅有n-1条边，这是树的性质。
+    - 无环
 
 #### 最小生成树MST
 生成树中权重和最小的一个，也有可能是不唯一的
@@ -111,8 +112,7 @@ $$
 1. 使用堆，把每个权重丢进去
 2. 每次取最小；
 3. 判断是否形成cycle，如果不是就加进去，如果是就丢掉这条边
-##### note
-判断是否是cycle的时候必须要使用并查集
+!!! note "判断是否是cycle的时候必须要使用并查集"
 ```
 void Kruskal ( Graph G )
 {   
@@ -155,8 +155,8 @@ Articulation point关节点
 2. 虚线画出回边（back edges）
 3. 对根节点：查看有几个孩子，超过一个就行；对叶结点， 直接不考虑；对其他，需要它不能在向下走的时候碰到回边。
 ![](Attachments/Lec07 Graph_image_7.png)
-##### 性质
-深度优先树中祖先的深度顺序一定小于孩子的深度顺序，后文我们用这个性质来进行程序的实现
+!!! note "性质"
+    深度优先树中祖先的深度顺序一定小于孩子的深度顺序，后文我们用这个性质来进行程序的实现
 #### 程序实现
 Low(u)![](Attachments/Lec07 Graph_image_8.png)对非根非叶结点：要求Low(child)>=Num(u)，就是一个关节点（这说明它的下方没有路径通向它上方）
 
