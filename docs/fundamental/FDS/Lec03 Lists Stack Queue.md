@@ -11,7 +11,6 @@
 1. For a sequentially stored linear list of length N, the time complexities for deleting the first element and inserting the last element are O(1) and O(N), respectively.错误
 ## 二、栈(Stack)
 ### (1)定义
-top：栈顶元素  
 操作表
 
 1. int Isempty(Stack S);
@@ -73,6 +72,7 @@ void Push(SqStack *S, ElemType e){
 
 ### (1)定义
 定义了队头front，队尾rear，队头出，队尾进  
+
 操作表  
 
 1. InitQueue(&Q)

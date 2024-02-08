@@ -82,8 +82,7 @@ void iter_inorder(Tree T)
 ### (1)概念与结构
 ![Alt text](Attachments/Lec04%20Tree_image_6.png)
 ### (2)二叉树的线索化  
-实质就是在遍历二叉树的时候修改空指针。  
-也可以通过创造head，让它的lchild指向二叉树的根结点，rchild指向中序遍历访问到的最后一个结点。
+实质就是在遍历二叉树的时候修改空指针。也可以通过创造head，让它的lchild指向二叉树的根结点，rchild指向中序遍历访问到的最后一个结点。
 
 ## 五、二叉排序树
 
@@ -104,6 +103,8 @@ void iter_inorder(Tree T)
 ![Alt text](Attachments/Lec04%20Tree_image_7.png)
 ## 七、题目
 1. There exists a binary tree with 2016 nodes in total, and with 16 nodes having only one child.错误
-2. ![Alt text](Attachments/Lec04%20Tree_image_8.png)
+2. 
+    ![Alt text](Attachments/Lec04%20Tree_image_8.png)
 
-3. ![Alt text](Attachments/Lec04%20Tree_image_9.png)
+3. 
+   ![Alt text](Attachments/Lec04%20Tree_image_9.png)

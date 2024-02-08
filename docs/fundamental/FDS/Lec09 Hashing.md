@@ -21,8 +21,7 @@ Scan down the entire original hash table for non-deleted elements;
 Use a new function to hash those elements into the new table.
 
 ## 六、题目
-!!! question question 
-    - The average search time of searching a hash table with N elements is:
+!!! question "The average search time of searching a hash table with N elements is:"
     - A.O(1)
     - B.O(logN)
     - C.O(N)

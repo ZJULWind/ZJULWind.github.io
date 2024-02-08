@@ -5,11 +5,15 @@
 ![](Attachments/Lec08 Sorting_image_1.png)
 ### 2.A Lower Bound for Simple Sorting Algorithms
 一次交换相当于减去一对逆序对  
+
 所以时间复杂度：  
-T ( N, I ) = O(I+N ) where I is the number of inversions in the original array.
+
+$$T ( N, I ) = O(I+N )$$ 
+where I is the number of inversions in the original array.
 
 ### 3.两个算法定理
 【Theorem】The average number of inversions in an array of N distinct numbers is  N ( N - 1 ) / 4.  
+
 【Theorem】Any algorithm that sorts by exchanging adjacent elements requires $\Omega( N^2 )$ time on average.
 
 ## 二、Shellsort
@@ -148,9 +152,11 @@ $$
 
 ### 4.For Small Arrays
 Quicksort在数据较少的时候不一定快  
+
 Cutoff when N gets small ( e.g. N = 10 ) and use other efficient algorithms (such as insertion sort).
 ### 5.实现
 Median3函数的作用：将left，center，right的顺序按照从小到大的顺序排好，然后返回right-1的值  
+
 Qsort主要函数思路：在左边搜索，如果碰到比pivot大的，停下来；后面再在右边搜索，如果碰到比pivot小的，停下来。交换i,j；
 
 ```c

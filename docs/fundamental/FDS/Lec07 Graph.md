@@ -1,25 +1,27 @@
 # Lec07 Graph
 
 ## 一、图的概念
-有向图  
-无向图  
-简单图：不存在重复边，不存在顶点到自身的边  
-多重图：某两个结点之间的边数多于一条，允许与自己连  
-完全图：简单图的特例，每两个结点均相连  
-子图  
-连通、连通图、连通分量  
-**强连通：v到w与w到v均有路径**  
-强连通图、强连通分量  
-**生成树与生成森林**  
+- 有向图  
+- 无向图  
+- 简单图：不存在重复边，不存在顶点到自身的边  
+- 多重图：某两个结点之间的边数多于一条，允许与自己连  
+- 完全图：简单图的特例，每两个结点均相连  
+- 子图  
+- 连通、连通图、连通分量  
+- **强连通：v到w与w到v均有路径**  
+- 强连通图、强连通分量  
+- **生成树与生成森林**  
+
 ![](Attachments/Lec07 Graph_image_1.png)  
-度  
-权  
-网：带权图  
-稠密图、稀疏图  
-路径、路径长度、回路  
-简单路径、简单回路：顶点不重复出现  
-距离：u到v的最短路径若存在，则为u到v的距离，否则距离为无穷  
-有向树：一个顶点的入度为0，其余顶点出度均为1  
+
+- 度  
+- 权  
+- 网：带权图  
+- 稠密图、稀疏图  
+- 路径、路径长度、回路  
+- 简单路径、简单回路：顶点不重复出现  
+- 距离：u到v的最短路径若存在，则为u到v的距离，否则距离为无穷  
+- 有向树：一个顶点的入度为0，其余顶点出度均为1  
 
 ## 二、图的存储结构
 ### 1.邻接矩阵
@@ -49,11 +51,13 @@ typedef PtrToGNode LGraph;
 ### 3.邻接多重表
 多用于无向图
 每一个顶点用一个结点表示
+
 $$data| firstedge$$
+
 每一个边也用一个结点表示
-$$
-ivex|ilink|jvex|jlink
-$$
+
+$$ivex|ilink|jvex|jlink$$
+
 解释：**其中ivex和jvex是与某条边依附的两个顶点在顶点表中下标。ilink 指向依附顶点ivex的下一条边，jlink 指向依附顶点jvex的下一条边。**
 
 ![](Attachments/Lec07 Graph_image_2.png)
@@ -158,16 +162,19 @@ Articulation point关节点
 !!! note "性质"
     深度优先树中祖先的深度顺序一定小于孩子的深度顺序，后文我们用这个性质来进行程序的实现
 #### 程序实现
-Low(u)![](Attachments/Lec07 Graph_image_8.png)对非根非叶结点：要求Low(child)>=Num(u)，就是一个关节点（这说明它的下方没有路径通向它上方）
+Low(u)![](Attachments/Lec07 Graph_image_8.png)
+
+对非根非叶结点：要求Low(child)>=Num(u)，就是一个关节点（这说明它的下方没有路径通向它上方）
 
 ### Euler Circuits欧拉环
 欧拉路径与欧拉环  
+
 ![](Attachments/Lec07 Graph_image_9.png)  
 
-要求条件  
-欧拉回路定理与欧拉路径定理  
-![](Attachments/Lec07 Graph_image_10.png)  
-用深度优先搜索找到路径  
+!!! note "要求条件"  
+    - 欧拉回路定理与欧拉路径定理  
+    ![](Attachments/Lec07 Graph_image_10.png)  
+    - 可以用深度优先搜索找到路径  
 
 ## 题目
 1.For a graph, if each vertex has an even degree or only two vertexes have odd degree, we can find a cycle that visits every edge exactly once 错误
