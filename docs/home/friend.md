@@ -40,7 +40,7 @@
         <div class="flink-item-icon">
                 ![Alt text](images/friends/spy.jpg)
         </div>
-        <a href="47.96.29.144" title="Wingee(晚栀)" target="_blank">
+        <a href="http://47.96.29.144/" title="Wingee(晚栀)" target="_blank">
             <div class="flink-item-name">Wingee(晚栀)</div>
             <div class="flink-item-desc">Pwn佬...</div>
         </a>
@@ -49,7 +49,7 @@
         <div class="flink-item-icon">
                 ![Alt text](images/friends/maricle.jpg)
         </div>
-        <a href="miraclemaster.cn" title="白塔" target="_blank">
+        <a href="http://miraclemaster.cn./" title="白塔" target="_blank">
             <div class="flink-item-name">白塔</div>
             <div class="flink-item-desc">奇迹行者还在刷野</div>
         </a>
