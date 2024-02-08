@@ -1,16 +1,13 @@
 # Welcome to 長風's NOTEBOOK
-浙江大学2022级信息工程本科生with ACEE&Shannon.  
-## Commands
+Hi~这里是我的首页，以及你可以叫我長風，一位浙江大学2022级信息工程本科生with ACEE&Shannon。被N友朋友们以及杰哥所感染打算搭建这个网页，希望我的笔记能给别人起到或多或少的一点帮助！
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+!!! note "网站诞生纪念日"
+    - 2024年2月6日
 
-## Project layout
+!!! info "定期更新笔记"
+    - 专业基础课笔记
+    - 专业课笔记
+    - 在工高以及在香农的额外学习笔记
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-## testestest
+!!! question "如果发现任何bug"
+    - 可以联系我 via 1219131241@qq.com

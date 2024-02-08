@@ -38,8 +38,14 @@ nav:
     - ./extra/index.md
     - Stanford CS229  MachineLearning :
       - ./extra/Stanford CS229  MachineLearning/index.md
+      - ML_Note1 : ./extra/Stanford CS229  MachineLearning/ML Note1.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
+      - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md
+      - Lec02 Convex sets : ./extra/Stanford EE364A Convex Optimization/Lec02 Convex sets.md
+      - Lec03 Convex Functions : ./extra/Stanford EE364A Convex Optimization/Lec03 Convex Functions.md
+      - Lec04 Convex optimization problems : ./extra/Stanford EE364A Convex Optimization/Lec04 Convex optimization problems.md
+
 
 theme:
   name: material # 主题名称，Material已经是最优秀的选择了，相信我。
@@ -157,9 +163,9 @@ markdown_extensions:
         - includes/abbreviations.md
 
 extra_css:
-  # - assets/stylesheets/extra.css
-  # - assets/stylesheets/glightbox.min.css
-  # - assets/stylesheets/galaxy.css
+  - assets/stylesheets/extra.css
+  - assets/stylesheets/glightbox.min.css
+  - assets/stylesheets/galaxy.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
 # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css
@@ -167,13 +173,13 @@ extra_css:
 # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
 
 extra_javascript:
-  # - assets/javascripts/katex.js 
-  # - assets/javascripts/mathjax.js
+  - assets/javascripts/katex.js 
+  - assets/javascripts/mathjax.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   # - assets/javascripts/titlechange.js
-  # - assets/javascripts/glightbox.min.js
+  - assets/javascripts/glightbox.min.js
   # - assets/javascripts/click.js
   # - assets/javascripts/galaxy.js
