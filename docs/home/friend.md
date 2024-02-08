@@ -62,6 +62,6 @@
         </div>
         <a href="https://note.jiepeng.tech/" title="Jiepeng Lab" target="_blank">
             <div class="flink-item-name">Jiepeng Lab</div>
-            <div class="flink-item-desc">杰鹏老师！</div>
+            <div class="flink-item-desc">杰鹏老师！好多代码从这里扒拉的...</div>
         </a>
     </div>
