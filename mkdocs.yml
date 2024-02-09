@@ -129,7 +129,7 @@ markdown_extensions:
       permalink: true
       toc_depth: 5
       permalink_title: 点击此处可置顶内容
-  - markdown.extensions.nl2br #支持无回车换行
+  # - markdown.extensions.nl2br #支持无回车换行
   - markdown.extensions.sane_lists #有序无序列表的一个扩展。
   - markdown.extensions.wikilinks #支持wiki链接
 
