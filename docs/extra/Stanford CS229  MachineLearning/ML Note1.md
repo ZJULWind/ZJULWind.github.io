@@ -148,3 +148,5 @@ $$θ := θ - H^{-1}∇_θℓ(θ).$$
 $$H_{ij}=\frac{\partial^2ℓ(θ).}{\partial \theta_i \partial \theta_j}$$
 
 
+
+
