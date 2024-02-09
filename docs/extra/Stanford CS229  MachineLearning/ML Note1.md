@@ -141,11 +141,10 @@ $$
 ### 推广
 如果 $\theta$ 是一个多维的向量，那么更新方案改为
 
-$$
-θ := θ - H^{-1}∇_θℓ(θ).
-$$
+$$θ := θ - H^{-1}∇_θℓ(θ).$$
+
 其中H是Hessian矩阵，
 
-$$
-H_{ij}=\frac{\partial^2ℓ(θ).}{\partial \theta_i \partial \theta_j}
-$$
+$$H_{ij}=\frac{\partial^2ℓ(θ).}{\partial \theta_i \partial \theta_j}$$
+
+

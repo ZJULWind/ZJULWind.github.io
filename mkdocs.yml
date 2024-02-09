@@ -11,10 +11,10 @@ nav:
   - 首页: 
     - 首页 : home/index.md
     - 朋友们 : home/friend.md
-    - 其他朋友们: home/friendsplus.md
+    - Building your website : home/writeup.md
 
   - 基础课程: 
-    - ./fundamental/index.md
+    - ./fundamental/index.md 
     - 概率论与数理统计 :
       - ./fundamental/gaitong/index.md
       - 常见随机变量的数字特征: fundamental/gaitong/sum.md
@@ -118,49 +118,54 @@ theme:
 
 markdown_extensions:
   # Python Markdown
-  - abbr
-  - admonition
-  - attr_list
-  - def_list
-  - tables
-  - footnotes
-  - md_in_html
-  - toc:
+  - abbr # 支持缩写标签，允许你定义缩写词及其解释。 
+  - admonition #支持创建带有标题的特殊块，用于提示、注意事项等。
+  - attr_list #允许在Markdown元素上添加HTML属性。
+  - def_list #支持定义列表的创建。
+  - tables # 启用Markdown表格语法。
+  - footnotes #支持脚注的创建。
+  - md_in_html #允许在HTML块内使用Markdown语法。
+  - toc: # 生成一个可点击的目录，
       permalink: true
       toc_depth: 5
       permalink_title: 点击此处可置顶内容
+  - markdown.extensions.nl2br #支持无回车换行
+  - markdown.extensions.sane_lists #有序无序列表的一个扩展。
+  - markdown.extensions.wikilinks #支持wiki链接
+
   # Python Markdown Extensions
-  - pymdownx.arithmatex:
+  - pymdownx.arithmatex: #提供对数学表达式的支持，允许在Markdown中直接使用LaTeX语法。
       generic: true
-  - pymdownx.betterem
-  - pymdownx.tabbed:
+  - pymdownx.betterem #改进了强调（斜体和粗体）的解析。
+  - pymdownx.tabbed: #允许创建标签页，用于在同一位置显示不同的内容块。
       alternate_style: true
-  - pymdownx.caret
-  - pymdownx.details
-  - pymdownx.emoji:
+  - pymdownx.caret  #添加对插入文本和删除文本的支持。
+  - pymdownx.details # 支持创建可折叠的详情块（HTML <details> 和 <summary> 标签）。
+  - pymdownx.emoji: #通过名称或代码添加表情符号，支持自定义表情生成器。
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight:
+  - pymdownx.highlight: #改进代码高亮显示，支持行号、行跨度等特性。
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.smartsymbols
-  - pymdownx.superfences:
+  - pymdownx.inlinehilite #允许在文本中直接高亮代码片段。
+  - pymdownx.keys #支持键盘按键的表示。
+  - pymdownx.mark #支持高亮标记文本。
+  - pymdownx.smartsymbols #自动将某些文本模式转换为符号，如箭头和数学符号。
+  - pymdownx.superfences: #提供更强大的代码块功能，支持自定义围栏（fences）和Mermaid图表。
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
+  - pymdownx.tabbed: #
       alternate_style: true
-  - pymdownx.tasklist:
+  - pymdownx.tasklist: #支持任务列表，允许使用自定义复选框。 
       custom_checkbox: true
-  - pymdownx.tilde
-  - pymdownx.snippets:
+  - pymdownx.tilde # 支持删除线和下划线文本。
+  - pymdownx.snippets: #允许自动包含其他Markdown文件的内容。
       auto_append:
         - includes/abbreviations.md
+  - mdx_wikilink_plus
 
 extra_css:
   - assets/stylesheets/extra.css
