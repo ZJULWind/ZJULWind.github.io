@@ -165,7 +165,7 @@ markdown_extensions:
   - pymdownx.snippets: #允许自动包含其他Markdown文件的内容。
       auto_append:
         - includes/abbreviations.md
-  - mdx_wikilink_plus
+  # - mdx_wikilink_plus
 
 extra_css:
   - assets/stylesheets/extra.css
