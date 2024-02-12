@@ -39,6 +39,7 @@ nav:
     - Stanford CS229  MachineLearning :
       - ./extra/Stanford CS229  MachineLearning/index.md
       - ML_Note1 : ./extra/Stanford CS229  MachineLearning/ML Note1.md
+      - ML_Note2 : ./extra/Stanford CS229  MachineLearning/ML Note2.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
       - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md
