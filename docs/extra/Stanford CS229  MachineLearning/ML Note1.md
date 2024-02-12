@@ -1,4 +1,4 @@
-# ML Note1
+# ML Note1 线性回归
 线性的规划中，假设函数（hypothesis）被设定为
 
 $$
@@ -79,6 +79,8 @@ where $w^{(i)}$ is defined by
 $$w^{(i)}=exp\{-\frac{(x^{(i)}-x)^2}{2\tau^2}\}$$
 
 τ is called the **bandwidth parameter**
+
+---
 ## 5.Logistic regression
 ·针对的是binary classification problem。
 ### 新的假设函数
@@ -147,6 +149,7 @@ $$θ := θ - H^{-1}∇_θℓ(θ).$$
 
 $$H_{ij}=\frac{\partial^2ℓ(θ).}{\partial \theta_i \partial \theta_j}$$
 
+---
 
 ## 7.The exponential familly 
 

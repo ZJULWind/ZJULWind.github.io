@@ -1,6 +1,8 @@
 # Building your website
 ## 如何搭建你的网站
 推荐一下CCnoccc搭建网站的writeup:[CCnocc's writeup](https://zjuccnocc.github.io/BlogWriteup/Mkdocs%E4%BD%BF%E7%94%A8Writeup/)
+
+关于material主题的配置问题，可以参考[Setup](https://squidfunk.github.io/mkdocs-material/setup/)
 ## 记录python-markdown拓展使用
 参考文献[python-markdown语法](https://blog.csdn.net/P_LarT/article/details/55819896?ops_request_misc=&request_id=&biz_id=102&utm_term=python%20markdown&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-4-55819896.nonecase&spm=1018.2226.3001.4187),[一些整合](https://facelessuser.github.io/pymdown-extensions/extensions/mark/)总结一些较为好用的格式。
 
