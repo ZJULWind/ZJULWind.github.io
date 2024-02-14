@@ -65,3 +65,12 @@
             <div class="flink-item-desc">杰鹏老师！好多代码从这里扒拉的...</div>
         </a>
     </div>
+    <div class="flink-list-item">
+        <div class="flink-item-icon">
+                ![Alt text](images/friends/jzj.jpg)
+        </div>
+        <a href="https://tsumgo.github.io/" title="Tsum's Blog" target="_blank">
+            <div class="flink-item-name">Tsum's Blog</div>
+            <div class="flink-item-desc">一起上粥今芳教改的好朋友！</div>
+        </a>
+    </div>
