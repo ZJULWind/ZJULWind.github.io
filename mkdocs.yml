@@ -41,6 +41,7 @@ nav:
       - 1 线性回归: ./extra/Stanford CS229  MachineLearning/ML Note1.md
       - 2 GDA及朴素贝叶斯 : ./extra/Stanford CS229  MachineLearning/ML Note2.md
       - 3 SVM : ./extra/Stanford CS229  MachineLearning/ML Note3.md
+      - 4 正则化 : ./extra/Stanford CS229  MachineLearning/ML_Note4 Learning Theory.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
       - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md
