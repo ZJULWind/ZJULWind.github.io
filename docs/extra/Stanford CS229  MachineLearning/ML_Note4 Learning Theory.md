@@ -75,3 +75,31 @@ $$
 $$
 θ ∼ N(0; τ ^2I)
 $$
+
+## Online learning
+在线学习的思路在于，不断读取数据并在读取数据的时候更改模型。
+### perceptron algorithm 感知器算法
+
+感知器算法（ $y\in\{-1,1\}$ 的参数 $\theta \in R^{n+1}$ , $h_\theta (x)=g(\theta^Tx)$
+
+$$
+g(z)=
+\begin{cases}
+1 \quad if \ z\geq 0\\
+-1 \quad if \ z <0
+\end {cases}
+$$
+
+如果 $h_θ(x) = y$，那么不做改变；否则更新$θ := θ + yx$
+
+误差上限为 $(D/\gamma)^2$ ，其中
+
+$$
+D=\max||x^{(i)}||
+$$
+
+$\gamma$满足对于任意单位向量u(||u||=1)，都满足
+
+$$
+	y^{(i)}\cdot (u^Tx^{(i)})\geq\gamma
+$$
