@@ -11,15 +11,6 @@
     </div>
     <div class="flink-list-item">
         <div class="flink-item-icon">
-                ![Alt text](images/friends/ccking.jpg)
-        </div>
-        <a href="https://zjuccnocc.github.io/" title="CCnocc Blo" target="_blank">
-            <div class="flink-item-name">CCnocc Blog</div>
-            <div class="flink-item-desc">这个老师想要两个位置</div>
-        </a>
-    </div>
-    <div class="flink-list-item">
-        <div class="flink-item-icon">
                 ![Alt text](images/friends/tauhkc.jpg)
         </div>
         <a href="http://tauhkc.cn./" title="Tauh's Blog" target="_blank">

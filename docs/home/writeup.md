@@ -154,6 +154,6 @@ Task List
 
 - Unordered item 1
 - Unordered item 2
-## 希腊字母表
-![希腊字母表](image.png)
+## 希腊字母表   
+![希腊字母表](./images/image.png)
 

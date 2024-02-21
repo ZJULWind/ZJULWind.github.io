@@ -3,6 +3,15 @@
 !!! quote "CS229 ML"
     - 一门研究生课程，所以更偏重数学理论，不满足于调包而想深入理解算法本质，或者有志于从事机器学习理论研究的同学可以学习这门课程。课程网站上提供了所有的课程 notes，写得非常专业且理论，需要一定的数学功底。
 
+!!! Abstract "索引"
+    - Supervised learning
+        - [ LMS.Logistic regression. Perceptron. Exponential family.Generative learning algorithms](https://zjulwind.github.io/extra/Stanford%20CS229%20%20MachineLearning/ML%20Note1/)
+        - [ Gaussian discriminant analysis. Naive Bayes](https://zjulwind.github.io/extra/Stanford%20CS229%20%20MachineLearning/ML%20Note2/)
+        - [Support vector machines](https://zjulwind.github.io/extra/Stanford%20CS229%20%20MachineLearning/ML%20Note3/)
+    - Learning theory
+        - [Bias/variance tradeoff. Union and Chernoff/Hoeffdingbounds.VC dimension. Worst case (online) learning](https://zjulwind.github.io/extra/Stanford%20CS229%20%20MachineLearning/ML%20Note4/)
+    - Unsupervised learning
+        - [Clustering. K-means.EM. Mixture of Gaussians.](https://zjulwind.github.io/extra/Stanford%20CS229%20%20MachineLearning/ML%20Note5/)
 !!! info "课程信息"
     - 所属大学：Stanford
     - 先修要求：高数，概率论，Python，需要较深厚的数学功底

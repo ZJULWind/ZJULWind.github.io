@@ -41,8 +41,8 @@ nav:
       - 1 线性回归: ./extra/Stanford CS229  MachineLearning/ML Note1.md
       - 2 GDA及朴素贝叶斯 : ./extra/Stanford CS229  MachineLearning/ML Note2.md
       - 3 SVM : ./extra/Stanford CS229  MachineLearning/ML Note3.md
-      - 4 学习理论 : ./extra/Stanford CS229  MachineLearning/ML_Note4 Learning Theory.md
-      - 5 无监督学习 : ./extra/Stanford CS229  MachineLearning/ML_Note5 Unsupervised Learning.md
+      - 4 学习理论 : ./extra/Stanford CS229  MachineLearning/ML Note4.md
+      - 5 无监督学习 : ./extra/Stanford CS229  MachineLearning/ML Note5.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
       - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md
@@ -154,8 +154,8 @@ markdown_extensions:
   - pymdownx.caret  #添加对插入文本和删除文本的支持。
   - pymdownx.details # 支持创建可折叠的详情块（HTML <details> 和 <summary> 标签）。
   - pymdownx.emoji: #通过名称或代码添加表情符号，支持自定义表情生成器。
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.twemoji
   - pymdownx.highlight: #改进代码高亮显示，支持行号、行跨度等特性。
       anchor_linenums: true
       line_spans: __span
