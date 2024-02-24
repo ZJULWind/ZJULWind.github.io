@@ -38,11 +38,12 @@ nav:
     - ./extra/index.md
     - Stanford CS229  MachineLearning :
       - ./extra/Stanford CS229  MachineLearning/index.md
-      - 1 线性回归: ./extra/Stanford CS229  MachineLearning/ML Note1.md
-      - 2 GDA及朴素贝叶斯 : ./extra/Stanford CS229  MachineLearning/ML Note2.md
+      - 1 监督学习-回归: ./extra/Stanford CS229  MachineLearning/ML Note1.md
+      - 2 监督学习-生成 : ./extra/Stanford CS229  MachineLearning/ML Note2.md
       - 3 SVM : ./extra/Stanford CS229  MachineLearning/ML Note3.md
       - 4 学习理论 : ./extra/Stanford CS229  MachineLearning/ML Note4.md
       - 5 无监督学习 : ./extra/Stanford CS229  MachineLearning/ML Note5.md
+      - 6 因子分析模型 : ./extra/Stanford CS229  MachineLearning/ML Note6.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
       - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md

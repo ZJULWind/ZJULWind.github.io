@@ -1,4 +1,4 @@
-# ML_Note2 GDA以及朴素贝叶斯
+# 监督学习-生成
 
 上述所通过学习 $p(y|x)$ 的方法被称为**判别学习方法**(discriminative learning algorithms)。
 

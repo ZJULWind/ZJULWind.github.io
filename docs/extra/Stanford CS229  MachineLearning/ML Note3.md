@@ -1,4 +1,4 @@
-# ML Note3 SVM
+# SVM
 !!!NOTE "New Notation"
     - 在介绍SVM前，我们约定以后的 $y\in \{ -1,1\}$ , 以及分类器用w与b表示(更好表示斜率与节距)，并抛弃了 $x_0=1$
     
