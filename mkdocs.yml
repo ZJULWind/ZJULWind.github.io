@@ -44,6 +44,7 @@ nav:
       - 4 学习理论 : ./extra/Stanford CS229  MachineLearning/ML Note4.md
       - 5 无监督学习 : ./extra/Stanford CS229  MachineLearning/ML Note5.md
       - 6 因子分析模型 : ./extra/Stanford CS229  MachineLearning/ML Note6.md
+      - 7 PCA : ./extra/Stanford CS229  MachineLearning/ML Note7.md
     - Stanford EE364A Convex Optimization :
       - ./extra/Stanford EE364A Convex Optimization/index.md
       - Lec01 Introduction : ./extra/Stanford EE364A Convex Optimization/Lec01 Introduction.md
