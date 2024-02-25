@@ -33,8 +33,17 @@ nav:
       - Lec08 Sorting             : fundamental/FDS/Lec08 Sorting.md
       - Lec09 Hashing             : fundamental/FDS/Lec09 Hashing.md
       - FDS复习向                  : fundamental/FDS/FDS复习.md
-  - 专业课程: special/index.md
-  - ACEE&Shannon: 
+
+  - 专业课程: 
+    - ./special/index.md
+    - 数字系统设计 :
+      - ./special/Digital System Design/index.md
+    - 电磁场与电磁波 :
+      - ./special/Field Wave/index.md
+    - 信号与系统 :
+      - ./special/Signal and System/index.md
+
+  - ACEE&Shannon : 
     - ./extra/index.md
     - Stanford CS229  MachineLearning :
       - ./extra/Stanford CS229  MachineLearning/index.md
