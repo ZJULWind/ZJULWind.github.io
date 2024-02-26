@@ -22,4 +22,5 @@
             - 指令集
             - 4位CPU设计
 !!! note "课程资源"
-    
+    - [学在浙大](https://courses.zju.edu.cn/course/69700/content#/)
+        

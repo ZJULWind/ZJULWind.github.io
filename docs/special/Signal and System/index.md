@@ -5,6 +5,7 @@
     - 成绩组成：25%期中+35%期末+40%作业/lab
 
 !!! note "课程资源"
+    - [学在浙大](https://courses.zju.edu.cn/course/69825/content#/)
     - [MIT opencourse](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/)
     - [MIT HomeWork&Solution](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/assignments/)
     - [MIT EXAM](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/pages/exams/)

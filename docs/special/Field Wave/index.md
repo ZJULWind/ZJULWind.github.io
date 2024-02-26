@@ -8,5 +8,7 @@
     - 成绩组成：15%期中+35%期末+50%平时成绩（含场波实验）
 
 !!! note "课程资源"
+    - [学在浙大](https://courses.zju.edu.cn/course/70172/content#/)
     - [郑史烈老师班的ppt](https://www.cc98.org/topic/5368821)
+
 
