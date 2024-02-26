@@ -33,6 +33,9 @@ nav:
       - Lec08 Sorting             : fundamental/FDS/Lec08 Sorting.md
       - Lec09 Hashing             : fundamental/FDS/Lec09 Hashing.md
       - FDS复习向                  : fundamental/FDS/FDS复习.md
+    - 信息安全原理与数学基础 :
+      - ./fundamental/Xinanyuan/index.md
+
 
   - 专业课程: 
     - ./special/index.md

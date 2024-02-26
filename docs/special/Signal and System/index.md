@@ -2,7 +2,7 @@
 !!! info "课程信息"
     - 授课教师：龚小谨/张婷/陈晓明 老师（双语班）
     - 使用教材：奥本海姆的《signals and systems》
-    - 成绩组成：25%期中+35%期末+40%作业/lab
+    - 成绩组成：30%期中+40%期末+10%作业+20%lab
 
 !!! note "课程资源"
     - [学在浙大](https://courses.zju.edu.cn/course/69825/content#/)
