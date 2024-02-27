@@ -43,9 +43,10 @@ nav:
       - ./special/Digital System Design/index.md
     - 电磁场与电磁波 :
       - ./special/Field Wave/index.md
+      - 1_波与矢量分析 : ./special/Field Wave/1_波与矢量分析.md
     - 信号与系统 :
       - ./special/Signal and System/index.md
-
+      - 1_Introduction : ./special/Signal and System/1_Introduction.md
   - ACEE&Shannon : 
     - ./extra/index.md
     - Stanford CS229  MachineLearning :
