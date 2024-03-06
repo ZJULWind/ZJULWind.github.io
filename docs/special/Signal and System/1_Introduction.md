@@ -1,5 +1,5 @@
 ## 1.Signals
-### Classification
+### 1.1Classification
 **DT/CT**
 
 **Real/Complex**
@@ -33,7 +33,7 @@ P_{\infty}&=\lim_{N\to \infty}\frac{1}{2N+1}\sum_{n=-N}^N|x[n]|^2
 \end{align}
 $$
 
-### Building-Block Signals
+### 1.2Building-Block Signals
 #### For DT signal
 
 $$
@@ -58,14 +58,14 @@ u(t)=\int_{-\infty}^t\delta(\lambda)d\lambda=
 \end{cases}
 $$
 
-### Transformations of time
+### 1.3Transformations of time
 Time **shift/reversal/scaling**
 
 ---
 
 
 ## 2.Systems
-### Classification
+### 2.1Classification
 **with/without memory**
 
 **Stable/Non-stable**

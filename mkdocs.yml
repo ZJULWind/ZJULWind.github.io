@@ -41,10 +41,12 @@ nav:
     - ./special/index.md
     - 数字系统设计 :
       - ./special/Digital System Design/index.md
+      - 1_码制和逻辑代数: ./special/Digital System Design/1_码制和逻辑代数.md
     - 电磁场与电磁波 :
       - ./special/Field Wave/index.md
       - 1_波与矢量分析 : ./special/Field Wave/1_波与矢量分析.md
       - 2_传输线基本理论 : ./special/Field Wave/2_传输线基本理论.md
+      - 3_史密斯圆图与阻抗匹配 : ./special/Field Wave/3_史密斯圆图与阻抗匹配.md
     - 信号与系统 :
       - ./special/Signal and System/index.md
       - 1_Introduction : ./special/Signal and System/1_Introduction.md
