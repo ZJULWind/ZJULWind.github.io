@@ -1,0 +1,2327 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="ZJULWind">
+      
+      
+        <link rel="canonical" href="https://localhost:8000/extra/Stanford%20EE364A%20Convex%20Optimization/Lec02%20Convex%20sets/">
+      
+      
+        <link rel="prev" href="../Lec01%20Introduction/">
+      
+      
+        <link rel="next" href="../Lec03%20Convex%20Functions/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
+    
+    
+      
+        <title>Lec02 Convex sets - ZJULWind's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/glightbox.min.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/galaxy.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-lite-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lec02-convex-sets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="ZJULWind&#39;s Blog" class="md-header__button md-logo" aria-label="ZJULWind's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ZJULWind's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lec02 Convex sets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ZJULWind/ZJULWind.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZJULWindCode
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../home/" class="md-tabs__link">
+          
+  
+    
+  
+  首页
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../fundamental/" class="md-tabs__link">
+          
+  
+    
+  
+  基础课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../special/" class="md-tabs__link">
+          
+  
+    
+  
+  专业课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  ACEE&Shannon
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ZJULWind&#39;s Blog" class="md-nav__button md-logo" aria-label="ZJULWind's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ZJULWind's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ZJULWind/ZJULWind.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ZJULWindCode
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../home/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../fundamental/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    基础课程
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../special/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    专业课程
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    ACEE&Shannon
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            ACEE&Shannon
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../Stanford%20CS229%20%20MachineLearning/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    Stanford CS229  MachineLearning
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Stanford EE364A Convex Optimization
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Stanford EE364A Convex Optimization
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lec01%20Introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec01 Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lec02 Convex sets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lec02 Convex sets
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1affine-and-convex-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Affine and Convex sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Affine and Convex sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line segment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affine set:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-combination-and-convex-hull" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex combination and convex hull
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      仿射维数与相对内部
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex set:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex cone
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex cone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conic-combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      conic combination 锥组合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-cone_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      convex cone 凸锥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      锥包
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2some-important-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Some important examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Some important examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21hyperplanes-and-halfspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1Hyperplanes and Halfspaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1Hyperplanes and Halfspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperplane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#halfpspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Halfpspaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-euclidean-balls-and-ellipsoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Euclidean balls and Ellipsoids
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Euclidean balls and Ellipsoids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-ball" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Euclidean) Ball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ellipsoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ellipsoid:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-norm-balls-and-norm-cones" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Norm balls and norm cones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Norm balls and norm cones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norm-ball" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm ball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norm-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm cone:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-polyhedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Polyhedra 多面体
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Polyhedra 多面体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      单纯形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-positive-semidefinite-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Positive semidefinite cone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3operations-that-preserve-convexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Operations that preserve convexity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Operations that preserve convexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 intersection 交集
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-affine-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 affine functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-perspective-and-linear-fractional-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 perspective and linear-fractional function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 perspective and linear-fractional function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perspective-funtcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective funtcion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-fractional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear-fractional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Generalized Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Generalized Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41proper-cone-and-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1Proper cone and generalized inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1Proper cone and generalized inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proper-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      proper cone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      generalized inequalities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-minimum-and-minimal-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Minimum and minimal elements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Minimum and minimal elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimum elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal element
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5separating-and-supporting-hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Separating and supporting hyperplane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Separating and supporting hyperplane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-separating-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Separating hyperplane theorem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-supporting-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Supporting hyperplane theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Supporting hyperplane theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyperplane_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      hyperplane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporting-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supporting hyperplane theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dual-cones-and-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Dual cones and generalized inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Dual cones and generalized inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-cone-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dual cone \(K^*\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dual generalized inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-and-minimal-elements-via-dual-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum and minimal elements via dual inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum and minimal elements via dual inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mininum-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      mininum element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal elements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lec03%20Convex%20Functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec03 Convex Functions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lec04%20Convex%20optimization%20problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lec04 Convex optimization problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1affine-and-convex-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.Affine and Convex sets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Affine and Convex sets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#line" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#line-segment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Line segment:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#affine-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affine set:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-combination-and-convex-hull" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex combination and convex hull
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      仿射维数与相对内部
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex set:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convex cone
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Convex cone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conic-combination" class="md-nav__link">
+    <span class="md-ellipsis">
+      conic combination 锥组合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#convex-cone_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      convex cone 凸锥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      锥包
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2some-important-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.Some important examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Some important examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21hyperplanes-and-halfspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1Hyperplanes and Halfspaces
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1Hyperplanes and Halfspaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hyperplane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#halfpspaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      Halfpspaces
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-euclidean-balls-and-ellipsoids" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Euclidean balls and Ellipsoids
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Euclidean balls and Ellipsoids">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#euclidean-ball" class="md-nav__link">
+    <span class="md-ellipsis">
+      (Euclidean) Ball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ellipsoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ellipsoid:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-norm-balls-and-norm-cones" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 Norm balls and norm cones
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Norm balls and norm cones">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#norm" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norm-ball" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm ball
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#norm-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      norm cone:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-polyhedra" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 Polyhedra 多面体
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Polyhedra 多面体">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      单纯形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-positive-semidefinite-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.5 Positive semidefinite cone
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3operations-that-preserve-convexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.Operations that preserve convexity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.Operations that preserve convexity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-intersection" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 intersection 交集
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-affine-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 affine functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-perspective-and-linear-fractional-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 perspective and linear-fractional function
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 perspective and linear-fractional function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#perspective-funtcion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Perspective funtcion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-fractional" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linear-fractional
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.Generalized Inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.Generalized Inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41proper-cone-and-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1Proper cone and generalized inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1Proper cone and generalized inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#proper-cone" class="md-nav__link">
+    <span class="md-ellipsis">
+      proper cone
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      generalized inequalities
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-minimum-and-minimal-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Minimum and minimal elements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Minimum and minimal elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimum elements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal element
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5separating-and-supporting-hyperplane" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.Separating and supporting hyperplane
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.Separating and supporting hyperplane">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-separating-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Separating hyperplane theorem
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-supporting-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Supporting hyperplane theorem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Supporting hyperplane theorem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hyperplane_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      hyperplane
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supporting-hyperplane-theorem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supporting hyperplane theorem
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-dual-cones-and-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Dual cones and generalized inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Dual cones and generalized inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dual-cone-k" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dual cone \(K^*\)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dual-generalized-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dual generalized inequalities
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimum-and-minimal-elements-via-dual-inequalities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Minimum and minimal elements via dual inequalities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Minimum and minimal elements via dual inequalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mininum-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      mininum element
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minimal-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      minimal elements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="lec02-convex-sets">Lec02 Convex sets<a class="headerlink" href="#lec02-convex-sets" title="点击此处可置顶内容">&para;</a></h1>
+<h2 id="1affine-and-convex-sets">1.Affine and Convex sets<a class="headerlink" href="#1affine-and-convex-sets" title="点击此处可置顶内容">&para;</a></h2>
+<h4 id="line">Line:<a class="headerlink" href="#line" title="点击此处可置顶内容">&para;</a></h4>
+<p>all point x 
+$$
+x=\theta x_1+(1-\theta )x_2 
+$$</p>
+<h4 id="line-segment">Line segment:<a class="headerlink" href="#line-segment" title="点击此处可置顶内容">&para;</a></h4>
+<p>line that the</p>
+<div class="arithmatex">\[
+0 \leq \theta \leq1
+\]</div>
+<h4 id="affine-set">Affine set:<a class="headerlink" href="#affine-set" title="点击此处可置顶内容">&para;</a></h4>
+<p>for any two distinct points in the set , exist a line.
+    every affine set can be expressed as solution of system of linear equations.</p>
+<h4 id="convex-combination-and-convex-hull">Convex combination and convex hull<a class="headerlink" href="#convex-combination-and-convex-hull" title="点击此处可置顶内容">&para;</a></h4>
+<p><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_1.png" /></p>
+<p>convex hull 仿射包，记为aff C。
+仿射包是包含C的最小仿射集合，或者我们可以理解为壳。</p>
+<h3 id="_1">仿射维数与相对内部<a class="headerlink" href="#_1" title="点击此处可置顶内容">&para;</a></h3>
+<p>定义C的仿射维数为其仿射包的维数</p>
+<div class="admonition question">
+<p class="admonition-title">相对内部与相对边界</p>
+<ul>
+<li><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_2.png" /></li>
+</ul>
+</div>
+<h3 id="convex-set">Convex set:<a class="headerlink" href="#convex-set" title="点击此处可置顶内容">&para;</a></h3>
+<p>for any two distinct points in the set ,exist a line setment.</p>
+<h3 id="convex-cone">Convex cone<a class="headerlink" href="#convex-cone" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="conic-combination">conic combination 锥组合<a class="headerlink" href="#conic-combination" title="点击此处可置顶内容">&para;</a></h4>
+<div class="arithmatex">\[
+x=\theta_1x_1+\theta_2x_2
+\]</div>
+<p>with <span class="arithmatex">\(\theta_1\geq 0, \theta_2\geq 0\)</span></p>
+<h4 id="convex-cone_1">convex cone 凸锥<a class="headerlink" href="#convex-cone_1" title="点击此处可置顶内容">&para;</a></h4>
+<p>set that contains all conic combination of points in the set.</p>
+<h4 id="_2">锥包<a class="headerlink" href="#_2" title="点击此处可置顶内容">&para;</a></h4>
+<p>集合C的锥包为C中元素的所有锥组合的集合。</p>
+<hr />
+<h2 id="2some-important-examples">2.Some important examples<a class="headerlink" href="#2some-important-examples" title="点击此处可置顶内容">&para;</a></h2>
+<h3 id="21hyperplanes-and-halfspaces">2.1Hyperplanes and Halfspaces<a class="headerlink" href="#21hyperplanes-and-halfspaces" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="hyperplane">Hyperplane<a class="headerlink" href="#hyperplane" title="点击此处可置顶内容">&para;</a></h4>
+<p>set of the form <span class="arithmatex">\(\{x|a^Tx=b\}(a\neq 0)\)</span></p>
+<h4 id="halfpspaces">Halfpspaces<a class="headerlink" href="#halfpspaces" title="点击此处可置顶内容">&para;</a></h4>
+<p>set of the form <span class="arithmatex">\(\{x|a^Tx\leq b\}(a\neq 0)\)</span></p>
+<ol>
+<li>a is a normal vector</li>
+<li>hyperplanes are affine and convex; halfspaces are convex</li>
+</ol>
+<h3 id="22-euclidean-balls-and-ellipsoids">2.2 Euclidean balls and Ellipsoids<a class="headerlink" href="#22-euclidean-balls-and-ellipsoids" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="euclidean-ball">(Euclidean) Ball<a class="headerlink" href="#euclidean-ball" title="点击此处可置顶内容">&para;</a></h4>
+<p>with center <span class="arithmatex">\(x_c\)</span> and radius <span class="arithmatex">\(r\)</span>:</p>
+<div class="arithmatex">\[B(x_c, r) =\{x |\ ||x - x_c||_2 ≤ r\} = \{x_c + ru\ |\  ||u||_2 ≤ 1\}\]</div>
+<h4 id="ellipsoid">Ellipsoid:<a class="headerlink" href="#ellipsoid" title="点击此处可置顶内容">&para;</a></h4>
+<p>set of the form:</p>
+<div class="arithmatex">\[
+\{x | (x - x_c)^T P^{ -1}(x - x_c) ≤ 1\}
+\]</div>
+<p>with <span class="arithmatex">\(P ∈ S^n _{++}\)</span>(i.e., P symmetric positive definite)</p>
+<p>other representation: <span class="arithmatex">\(\{xc + Au | \ ||u||_2 ≤ 1\}\)</span> with A square and nonsingular</p>
+<h3 id="23-norm-balls-and-norm-cones">2.3 Norm balls and norm cones<a class="headerlink" href="#23-norm-balls-and-norm-cones" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="norm">norm<a class="headerlink" href="#norm" title="点击此处可置顶内容">&para;</a></h4>
+<p>a function ||·|| that satisfies</p>
+<ol>
+<li><span class="arithmatex">\(||x||≥ 0;||x|| = 0\)</span> if and only if <span class="arithmatex">\(x = 0\)</span> </li>
+<li><span class="arithmatex">\(||tx||= |t|||x||\)</span> for <span class="arithmatex">\(t ∈ R\)</span> </li>
+<li><span class="arithmatex">\(||x+y|| ≤ ||x|| + ||y||\)</span></li>
+</ol>
+<h4 id="norm-ball">norm ball<a class="headerlink" href="#norm-ball" title="点击此处可置顶内容">&para;</a></h4>
+<p>with center <span class="arithmatex">\(x_c\)</span> and radius r:</p>
+<div class="arithmatex">\[
+\{x | ||x - x_c|| ≤ r\}
+\]</div>
+<h4 id="norm-cone">norm cone:<a class="headerlink" href="#norm-cone" title="点击此处可置顶内容">&para;</a></h4>
+<div class="arithmatex">\[\{(x, t) | ||x|| ≤ t\}\subseteq R^{n+1}\]</div>
+<p>Euclidean norm cone is called secondorder cone</p>
+<p>norm balls and cones are convex</p>
+<h2 id="24-polyhedra">2.4 Polyhedra 多面体<a class="headerlink" href="#24-polyhedra" title="点击此处可置顶内容">&para;</a></h2>
+<p><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_3.png" /></p>
+<h4 id="_3">单纯形<a class="headerlink" href="#_3" title="点击此处可置顶内容">&para;</a></h4>
+<div class="admonition question">
+<p class="admonition-title">Title</p>
+<ul>
+<li>Contents</li>
+</ul>
+</div>
+<h2 id="25-positive-semidefinite-cone">2.5 Positive semidefinite cone<a class="headerlink" href="#25-positive-semidefinite-cone" title="点击此处可置顶内容">&para;</a></h2>
+<p>some notations<br />
+<img alt="" src="../Attachments/Lec02%20Convex%20sets_image_4.png" /></p>
+<hr />
+<h2 id="3operations-that-preserve-convexity">3.Operations that preserve convexity<a class="headerlink" href="#3operations-that-preserve-convexity" title="点击此处可置顶内容">&para;</a></h2>
+<h3 id="31-intersection">3.1 intersection 交集<a class="headerlink" href="#31-intersection" title="点击此处可置顶内容">&para;</a></h3>
+<p>the intersection of (any number of) convex sets is conve</p>
+<h3 id="32-affine-functions">3.2 affine functions<a class="headerlink" href="#32-affine-functions" title="点击此处可置顶内容">&para;</a></h3>
+<p><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_5.png" /></p>
+<div class="admonition example">
+<p class="admonition-title">Exmaple</p>
+</div>
+<ul>
+<li>Scaling 放缩 Translation平移 Projection 投影</li>
+<li>加法 直积 部分和 </li>
+<li>线性矩阵不等式的解是凸集</li>
+<li>双曲锥是凸集</li>
+</ul>
+<h3 id="33-perspective-and-linear-fractional-function">3.3 perspective and linear-fractional function<a class="headerlink" href="#33-perspective-and-linear-fractional-function" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="perspective-funtcion">Perspective funtcion<a class="headerlink" href="#perspective-funtcion" title="点击此处可置顶内容">&para;</a></h4>
+<p><span class="arithmatex">\(P:R^{n+1}→R^n\)</span></p>
+<div class="arithmatex">\[P (x, t) = x/t, dom P = \{(x, t) | t &gt; 0\}\]</div>
+<p>images and inverse images of convex sets under perspective are convex. 这说明了domP 的子集C如果是凸集，那么他的象也是凸集。</p>
+<p>透视函数可以理解为，规范化使得最后一维的分量为1，然后舍弃他。</p>
+<h4 id="linear-fractional">Linear-fractional<a class="headerlink" href="#linear-fractional" title="点击此处可置顶内容">&para;</a></h4>
+<p><span class="arithmatex">\(f : R^n → R^m:\)</span></p>
+<div class="arithmatex">\[f(x) = \frac{Ax + b}{c^T x + d},\quad dom \ f = \{x | c^T x + d &gt; 0\}\]</div>
+<p>images and inverse images of convex sets under linear-fractional functions are convex</p>
+<hr />
+<h2 id="4generalized-inequalities">4.Generalized Inequalities<a class="headerlink" href="#4generalized-inequalities" title="点击此处可置顶内容">&para;</a></h2>
+<h3 id="41proper-cone-and-generalized-inequalities">4.1Proper cone and generalized inequalities<a class="headerlink" href="#41proper-cone-and-generalized-inequalities" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="proper-cone">proper cone<a class="headerlink" href="#proper-cone" title="点击此处可置顶内容">&para;</a></h4>
+<p>a convex cone K is a proper cone if </p>
+<ol>
+<li>K is closed </li>
+<li>K is solid </li>
+<li>K is pointed - which means K contains no line </li>
+</ol>
+<h4 id="generalized-inequalities">generalized inequalities<a class="headerlink" href="#generalized-inequalities" title="点击此处可置顶内容">&para;</a></h4>
+<p>suppose K is a proper cone,we define </p>
+<div class="arithmatex">\[
+x ≼_K y \iff y-x \in K
+\]</div>
+<p>to be more strict
+$$
+x ≺_K y \iff y-x \in  int   K
+$$</p>
+<div class="admonition example">
+<p class="admonition-title">Examples</p>
+<ul>
+<li>非负象限及分量不等式</li>
+<li>半正定锥及矩阵不等式</li>
+<li>[0.1]上的多项式锥</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Properties</p>
+<ul>
+<li><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_6.png" /></li>
+<li><img alt="" src="../Attachments/Lec02%20Convex%20sets_image_7.png" /></li>
+</ul>
+</div>
+<h3 id="42-minimum-and-minimal-elements">4.2 Minimum and minimal elements<a class="headerlink" href="#42-minimum-and-minimal-elements" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="minimum-elements">minimum elements<a class="headerlink" href="#minimum-elements" title="点击此处可置顶内容">&para;</a></h4>
+<p><span class="arithmatex">\(x ∈ S\)</span> is the minimum element of S with respect to <span class="arithmatex">\(≼_K\)</span>if</p>
+<div class="arithmatex">\[y ∈ S ⇒ x ≼_K y\]</div>
+<h4 id="minimal-element">minimal element<a class="headerlink" href="#minimal-element" title="点击此处可置顶内容">&para;</a></h4>
+<p><span class="arithmatex">\(x ∈ S\)</span> is a minimal element of S with respect to <span class="arithmatex">\(≼_K\)</span> if</p>
+<div class="arithmatex">\[
+y ∈ S, y ≼_K x ⇒ y = x
+\]</div>
+<p>!!! Example  集合符号语言且建立在<span class="arithmatex">\(R_+^2\)</span>上的一个例子
+    - 首先，用简单的集合符号我们可以让 <span class="arithmatex">\(x\in S\)</span>，目标是如何判断x是否是最小元/极小元。
+    - 1.如果 <span class="arithmatex">\(S\subseteq x+K\)</span>，那么x是最小元
+    - 2.如果 <span class="arithmatex">\((x-K)\cap S = \{x\}\)</span>，那么x是极小元
+    - 示意图如下
+    - <img alt="" src="../Attachments/Lec02%20Convex%20sets_image_8.png" /></p>
+<hr />
+<h2 id="5separating-and-supporting-hyperplane">5.Separating and supporting hyperplane<a class="headerlink" href="#5separating-and-supporting-hyperplane" title="点击此处可置顶内容">&para;</a></h2>
+<h3 id="51-separating-hyperplane-theorem">5.1 Separating hyperplane theorem<a class="headerlink" href="#51-separating-hyperplane-theorem" title="点击此处可置顶内容">&para;</a></h3>
+<p>if C and D are disjoint convex sets, then there exists <span class="arithmatex">\(a \neq 0\)</span>, b such that</p>
+<div class="arithmatex">\[a^T x ≤ b \ for\  x ∈ C, a^T x ≥ b \ for\  x ∈ D\]</div>
+<p>then we can say the hyperplane <span class="arithmatex">\(\{x | a^T x = b\}\)</span> separates C and D</p>
+<p>question  Deeper learning
+    - 超平面分离定理的证明、严格分离、逆定理……</p>
+<h3 id="52-supporting-hyperplane-theorem">5.2 Supporting hyperplane theorem<a class="headerlink" href="#52-supporting-hyperplane-theorem" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="hyperplane_1">hyperplane<a class="headerlink" href="#hyperplane_1" title="点击此处可置顶内容">&para;</a></h4>
+<p>suppose <span class="arithmatex">\(x_0\)</span> is a point on the boundary of C,if for any <span class="arithmatex">\(x\in C\)</span>,
+$$
+a^Tx\leq a^Tx_0
+$$
+then we can say hyperplane 
+$$
+{x|a<sup>Tx=a</sup>Tx_0}
+$$
+is a supporting hyperplane of C at point <span class="arithmatex">\(x_0\)</span></p>
+<h4 id="supporting-hyperplane-theorem">Supporting hyperplane theorem<a class="headerlink" href="#supporting-hyperplane-theorem" title="点击此处可置顶内容">&para;</a></h4>
+<p>if C is convex, then there exists a supporting hyperplane at every boundary point of C</p>
+<hr />
+<h2 id="6-dual-cones-and-generalized-inequalities">6. Dual cones and generalized inequalities<a class="headerlink" href="#6-dual-cones-and-generalized-inequalities" title="点击此处可置顶内容">&para;</a></h2>
+<h4 id="dual-cone-k">Dual cone <span class="arithmatex">\(K^*\)</span><a class="headerlink" href="#dual-cone-k" title="点击此处可置顶内容">&para;</a></h4>
+<div class="arithmatex">\[
+K^*=\{y | y^T x ≥ 0 \ for \ all \ x ∈ K\}
+\]</div>
+<div class="admonition example examples">
+<p class="admonition-title">Example</p>
+<ul>
+<li><span class="arithmatex">\(K = R^n_+: K^∗ = R^n _+\)</span></li>
+</ul>
+</div>
+<p><span class="arithmatex">\(K = S^n_+: K^∗ = S^n _+\)</span>
+ <span class="arithmatex">\(K = \{(x, t) | ||x||_2 ≤ t\}: K^∗ = \{(x, t) | ||x||_2 ≤ t\}\)</span>
+<span class="arithmatex">\(K = \{(x, t) | ||x||_1 ≤ t\}: K^∗ = \{(x, t) | ||x||_∞ ≤ t\}\)</span>
+    - first three examples are self-dual cones</p>
+<div class="admonition note">
+<p class="admonition-title">一些性质</p>
+<ul>
+<li>对偶锥总是凸的，即使K不是凸锥</li>
+<li>如果 <span class="arithmatex">\(K_1 \subseteq K_2\)</span>,那么 <span class="arithmatex">\(K_2^* \subseteq K_1^*\)</span></li>
+<li>如果K有非空内部，那么<span class="arithmatex">\(K^*\)</span> 是尖的</li>
+<li>如果K 的闭包是尖的，那么<span class="arithmatex">\(K^*\)</span> 必有非空内部</li>
+<li><span class="arithmatex">\(K^{**}\)</span> 是K的凸包的闭包，因此如果K是凸的且是闭的，那么<span class="arithmatex">\(K^{**}\)</span> = K</li>
+<li>这些最终说明了 如果K是一个proper cone 那么它的对偶锥也是，进一步有<span class="arithmatex">\(K^{**}\)</span> = K</li>
+</ul>
+</div>
+<h4 id="dual-generalized-inequalities">Dual generalized inequalities<a class="headerlink" href="#dual-generalized-inequalities" title="点击此处可置顶内容">&para;</a></h4>
+<div class="arithmatex">\[
+y ≽_{K^*} 0 \iff  y^T x ≥ 0 \ for\  all \ x ≽_K 0
+\]</div>
+<h3 id="minimum-and-minimal-elements-via-dual-inequalities">Minimum and minimal elements via dual inequalities<a class="headerlink" href="#minimum-and-minimal-elements-via-dual-inequalities" title="点击此处可置顶内容">&para;</a></h3>
+<h4 id="mininum-element">mininum element<a class="headerlink" href="#mininum-element" title="点击此处可置顶内容">&para;</a></h4>
+<p>x is minimum element of S iff for all <span class="arithmatex">\(λ ≻_{K^∗} 0\)</span>, x is the unique minimizer of <span class="arithmatex">\(λ^T z\)</span> over S</p>
+<p>从几何上来看，这样意味着对于任意  <span class="arithmatex">\(λ ≻_{K^∗} 0\)</span>，超平面 <span class="arithmatex">\(\{z|\ \lambda ^T(z-x)=0\}\)</span>是x在S的一个严格支撑超平面</p>
+<h4 id="minimal-elements">minimal elements<a class="headerlink" href="#minimal-elements" title="点击此处可置顶内容">&para;</a></h4>
+<p>if x minimizes <span class="arithmatex">\(λ^T z\)</span> over S for some <span class="arithmatex">\(λ ≻_{K^∗} 0\)</span>, then x is minimal.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../Lec01%20Introduction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lec01 Introduction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lec01 Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../Lec03%20Convex%20Functions/" class="md-footer__link md-footer__link--next" aria-label="Next: Lec03 Convex Functions">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Lec03 Convex Functions
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.path", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+        <script src="../../../assets/javascripts/katex.js"></script>
+      
+        <script src="../../../assets/javascripts/mathjax.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../assets/javascripts/glightbox.min.js"></script>
+      
+    
+  </body>
+</html>
